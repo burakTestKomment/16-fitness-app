@@ -2,30 +2,40 @@ import React, { useEffect, useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { exercisesOptions, fetchData } from "../utils/fetchData";
 import ExerciseCard from "./ExerciseCard";
-import Pagination from '@mui/material/Pagination';
+import Pagination from "@mui/material/Pagination";
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
- const [currentPage, setCurrentPage] = useState(1)
- const exercisesPerPage = 9
- const indexOfLastExercise = currentPage * exercisesPerPage
- const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage
- const currentExercises = exercises.slice(indexOfFirstExercise,indexOfLastExercise)
- const paginate = (e,value) => {
-  setCurrentPage(value)
-  window.scrollTo({ top:1800 , behavior:'smooth' })
- }
- useEffect(() => {
-  const fetchExercisesData = async () =>{
-    let exercisesData = []
+  const [currentPage, setCurrentPage] = useState(1);
+  const exercisesPerPage = 8;
+  const indexOfLastExercise = currentPage * exercisesPerPage;
+  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+  const currentExercises = exercises.slice(
+    indexOfFirstExercise,
+    indexOfLastExercise
+  );
+  const paginate = (e, value) => {
+    setCurrentPage(value);
+    window.scrollTo({ top: 1800, behavior: "smooth" });
+  };
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
 
-    if(bodyPart === 'all'){
-      exercisesData =  await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises", exercisesOptions)
-    }else{
-
-    }
-  }
- },[bodyPart])
+      if (bodyPart === "all") {
+        exercisesData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises",
+          exercisesOptions
+        );
+      } else {
+        exercisesData = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+          exercisesOptions
+        );
+      }
+      setExercises(exercisesData)
+    };
+    fetchExercisesData()
+  }, [bodyPart]);
   return (
     <Box
       id="exercises"
@@ -35,7 +45,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       mt="50px"
       p="20px"
     >
-      <Typography variant="h3">Showing Results</Typography>
+      <Typography marginBottom={3} variant="h3">Showing Results</Typography>
       <Stack
         direction="row"
         flexWrap="wrap"
