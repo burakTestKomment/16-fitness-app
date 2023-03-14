@@ -3,7 +3,7 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exercisesOptions, fetchData } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 
-const SearchExercises = ({ setBodyPart, bodyPart, setExercises}) => {
+const SearchExercises = ({ setBodyPart, bodyPart, setExercises, isBodyParts}) => {
   const [search, setSearch] = useState("");
   const [bodyParts, setBodyParts] = useState([])
 
@@ -86,7 +86,7 @@ const SearchExercises = ({ setBodyPart, bodyPart, setExercises}) => {
         </Button>
       </Box>
       <Box sx={{ position:'relative', width:'100%', p:'20px'}} >
-            <HorizontalScrollbar data={bodyParts}  bodyPart={bodyPart} setBodyPart={setBodyPart} />
+            <HorizontalScrollbar data={bodyParts}  bodyPart={bodyPart} setBodyPart={setBodyPart} isBodyParts={isBodyParts} />
       </Box>
     </Stack>
   );
