@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, Typography } from "@mui/material";
 import Icon from "../assets/icons/gym.png";  
- 
+ // override
 /**
 * @description The `BodyPart` function creates a React component that displays a
 * button representing a body part.
