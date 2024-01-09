@@ -7,14 +7,17 @@ import EquipmentImage from '../assets/icons/equipment.png';
 
 
 /**
-* @description This function takes an object with five properties ({gifUrl}, {name},
-* {target}, {equipment}, and {bodyPart}) representing exercise detail and returns a
-* JSX element that displays the image gifURL followed by text detailing the name of
-* the exercise as well as target areas.
+* @description This function named `Detail` is a component that takes an object
+* called `exerciseDetail` as a prop.
 * 
-* @returns { object } The output returned by the `Detail` function is a responsively-designed
-* HTML structure consisting of an image carousel with three buttons and corresponding
-* labels.
+* @returns { object } The output returned by the `Detail` function is a rendered
+* stack component with an image tag containing an GIF image from the `gifUrl` prop;
+* h3 and h6 variants of typography tag with title name (e.g.,"Arm Raises"), description
+* "Exercises keep you strong"; map extra details as array elements of stack components
+*   Each component having the 'body part' element
+* button tag using borderRadius (50%), background('#fff2db') properties with the
+* target(e.g. arm), extra detail icon; and  variant h5 text property(e.g. Biceps);
+* The stack children are direction="row" arranged with horizontal space ("margin").
 */
 const Detail = ({exerciseDetail}) => {
     const {  gifUrl, name, target, equipment,bodyPart}= exerciseDetail 
