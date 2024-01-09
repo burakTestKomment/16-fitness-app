@@ -2,6 +2,13 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import Icon from "../assets/icons/gym.png";
  
+/**
+* @description This function is a React component that renders a button for each
+* item of a collection (represented by the `bodyPart` object).
+* 
+* @returns {  } The `BodyPart` function returns a React component that renders a
+* button with an image and text.
+*/
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   return (
     <Stack
