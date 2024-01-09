@@ -6,6 +6,14 @@ import TargetImage from '../assets/icons/target.png';
 import EquipmentImage from '../assets/icons/equipment.png';
 
 
+/**
+* @description This function returns a React component that displays detailed
+* information about an exercise. The component includes the exercise name and target
+* body part using typography components.
+* 
+* @returns {  } The output returned by the `Detail` function is a rendered UI component
+* that displays information about an exercise.
+*/
 const Detail = ({exerciseDetail}) => {
     const {  gifUrl, name, target, equipment,bodyPart}= exerciseDetail 
 
