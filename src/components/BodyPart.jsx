@@ -3,12 +3,12 @@ import { Stack, Typography } from "@mui/material";
 import Icon from "../assets/icons/gym.png";
  
 /**
-* @description The function `BodyPart` is a high-order component that takes three
-* arguments: `item`, `setBodyPart`, and `bodyPart`. It returns a JSX element that
-* displays a button representing a body part.
+* @description The `BodyPart` function creates a React component that displays a
+* button representing a body part.
 * 
-* @returns { Component } The `BodyPart` function returns a JSX element that renders
-* a button with an image and text.
+* @returns { Component } The output returned by the function `BodyPart` is a React
+* component that renders a card with an image and text representing a body part. The
+* component accepts three props: `item`, `setBodyPart`, and `bodyPart`.
 */
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   return (
