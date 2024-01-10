@@ -41,7 +41,7 @@ const ExerciseDetail = () => {
       const equipmentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exercisesOptions)
       setEquipmentExercises(equipmentExercisesData)
 
-
+ 
     };
     fetchExercisesData();
   }, [id]);
